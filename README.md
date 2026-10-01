@@ -89,11 +89,10 @@ This connects directly to the near-perfect scores noted above, a model can look 
 ## 🛠️ Tech Stack
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
-  <img src="https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white" />
+  <img src="https://skillicons.dev/icons?i=py,tensorflow,pytorch,sklearn" />
+</p>
+<p align="center">
   <img src="https://img.shields.io/badge/Keras-D00000?style=for-the-badge&logo=keras&logoColor=white" />
-  <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white" />
-  <img src="https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white" />
   <img src="https://img.shields.io/badge/Roboflow-6706CE?style=for-the-badge" />
   <img src="https://img.shields.io/badge/LIME-00897B?style=for-the-badge" />
 </p>
