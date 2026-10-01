@@ -104,7 +104,6 @@ This connects directly to the near-perfect scores noted above, a model can look 
 notebooks/   the 4 Colab notebooks, with outputs (training curves, confusion matrices, metrics)
 scripts/     plain .py exports of 3 of the notebooks
 assets/      result images used in this README
-presentation/  project presentation (slides with team member names removed)
 ```
 
 ## 👤 About
