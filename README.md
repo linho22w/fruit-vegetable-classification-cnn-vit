@@ -2,6 +2,16 @@
 
 Image classification system that identifies fruits and vegetables from photos, comparing transfer learning with CNNs (InceptionV3, MobileNet, ResNet50V2) against a Vision Transformer (ViT). Built for the Digital Image Processing course of my MSc in Computer Engineering at UTAD.
 
+<p align="center">
+  <img src="assets/sample_banana.jpg" width="19%" />
+  <img src="assets/sample_batata.jpg" width="19%" />
+  <img src="assets/sample_diospiro.jpg" width="19%" />
+  <img src="assets/sample_kiwi.jpg" width="19%" />
+  <img src="assets/sample_laranja.jpg" width="19%" />
+  <br/>
+  <sub>Banana · Batata · Dióspiro · Kiwi · Laranja, the 5 classes in the self-collected dataset</sub>
+</p>
+
 ## 🎯 Motivation
 
 Self-checkout scales at supermarkets still require shoppers to manually look up and enter a code for loose fruits and vegetables, a step that is slow and a common source of pricing errors. This project explores whether a camera plus an image classification model could recognize the item automatically, skipping the manual code entry.
