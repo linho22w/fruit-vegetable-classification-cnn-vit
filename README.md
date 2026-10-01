@@ -52,6 +52,24 @@ This project ran the comparison twice, at two different scales:
 
 > Note on the near-perfect scores: both Roboflow datasets were split into train/validation/test *after* augmentation (rotations, exposure shifts, noise) rather than before. That means near-duplicate versions of the same source photo can end up on both sides of the split, which inflates test accuracy. These numbers are reported as obtained, but shouldn't be read as "a ViT solves 8-way fruit classification perfectly", a proper evaluation would re-split the data before augmenting.
 
+## 🧠 Explainability (XAI)
+
+High test accuracy doesn't say anything about *why* a model decided what it decided, so [LIME](https://github.com/marcotcr/lime) (Local Interpretable Model-agnostic Explanations) was used to inspect individual predictions, highlighting the image regions that most influenced each one.
+
+**When it works**, on a clean studio photo from the own dataset, InceptionV3 classifies this as Banana with 99.96% confidence, and LIME confirms it's actually looking at the fruit itself:
+
+<p align="center">
+  <img src="assets/xai-lime_correct-confident_banana.png" width="80%" />
+</p>
+
+**Where it breaks down.** All the training photos have plain, uncluttered backgrounds. Testing on a photo closer to a real supermarket scenario, fruit still inside a plastic shopping bag, exposes the gap: this persimmon gets classified as orange with 97% confidence, and LIME shows why, part of what the model is reacting to is the plastic bag's texture and glare, not just the fruit:
+
+<p align="center">
+  <img src="assets/xai-lime_wrong-confident_diospiro-as-laranja.png" width="80%" />
+</p>
+
+This connects directly to the near-perfect scores noted above, a model can look excellent on its own test set and still fail with high confidence the moment real-world conditions (lighting, packaging, clutter) stray from how the training photos were taken. Several more examples, one per class, are in the `classwide-dataset_mobilenet` notebook.
+
 ## 🧱 Approach
 
 - **Transfer learning** with CNNs pretrained on ImageNet (InceptionV3, MobileNet, ResNet50V2), base layers frozen, a classification head trained on top.
@@ -67,6 +85,7 @@ This project ran the comparison twice, at two different scales:
   <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white" />
   <img src="https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white" />
   <img src="https://img.shields.io/badge/Roboflow-6706CE?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/LIME-00897B?style=for-the-badge" />
 </p>
 
 ## 📂 Repository structure
